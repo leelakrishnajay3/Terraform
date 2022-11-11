@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('git checkout'){
+            steps {
+                git 'https://github.com/leelakrishnajay3/Terraform.git'
+            }
+        }
+        stage('Built Number') {
+            steps {
+                sh 'echo Hello World'
+                echo "Build number is ${currentBuild.number}"
+      }
+    }
+  }
+}
